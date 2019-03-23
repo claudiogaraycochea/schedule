@@ -71,7 +71,7 @@ textarea.inp {
   color: #2a3141;
   padding: 0 20px;
   font-size: 14px;
-  border-radius: 5px;
+  border-radius: 30px;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -82,6 +82,7 @@ textarea.inp {
 
 a.btn {
   margin-right: 5px;
+  cursor: pointer;
 }
 
 .btn-transparent {
