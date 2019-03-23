@@ -471,3 +471,14 @@ h1, h2, h3, h4 {
   width: 24px;
 	height: 24px;
 }
+
+.table {
+  border: 1px solid red;
+}
+
+.table .item {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid blue;
+  padding: 10px 20px;
+}

@@ -1,23 +1,6 @@
 import React, { Component } from 'react';
 import './GroupSelector.css';
-
-const groupList = [
-  {
-    id: 1,
-    name: 'Investors',
-    color: 'green',
-  },
-  {
-    id: 2,
-    name: 'Developers',
-    color: 'violet',
-  },
-  {
-    id: 3,
-    name: 'Investors & Devs',
-    color: 'blue',
-  }
-];
+import { groupList } from '../../global/Global';
 
 class GroupSelector extends Component {
   render() {
