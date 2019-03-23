@@ -67,9 +67,8 @@ textarea.inp {
 }
 
 .btn {
-  background: #3e5b77;
-  color: #ffffff;
-  border: 0;
+  border: 1px solid #2a3141;
+  color: #2a3141;
   padding: 0 20px;
   font-size: 14px;
   border-radius: 5px;
@@ -440,6 +439,7 @@ h1, h2, h3, h4 {
   flex: auto;
   display: flex;
   flex-direction: column;
+  border-bottom: 2px solid #e7e7e7;
 }
 
 .module-box .header {
@@ -455,7 +455,11 @@ h1, h2, h3, h4 {
 
 .module-box .content {
   flex: auto;
-  border-bottom: 2px solid #e7e7e7;
+  padding: 20px;
+}
+
+.module-box .footer {
+  padding: 20px;
 }
 
 [class^="icon-"],
