@@ -2,3 +2,25 @@
 	display: flex;
 	min-height: 240px;
 }
+
+.calendar-wrapper {
+  width: 100%;
+}
+
+.calendar-wrapper .item, .calendar-wrapper th {
+	padding: 2px;
+	font-size: 10px;
+	text-align: center;
+}
+
+.calendar-wrapper td {
+  position: relative;
+}
+
+.calendar-wrapper .item.item-draggable {
+  color: #222222;
+}
+
+.calendar-wrapper .item.item-disabled {
+  color: #cccccc;
+}
