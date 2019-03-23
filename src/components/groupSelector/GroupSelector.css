@@ -1,3 +1,4 @@
 .group-selector {
 	flex: auto;
+    display: flex;
 }

@@ -7,7 +7,7 @@ class GroupSelector extends Component {
       <div className="group-selector">
         <div className="module-box">
           <div className="header">
-            Group Header
+            GROUPS
           </div>
           <div className="content">
             Group content
