@@ -1,7 +1,62 @@
 .header-page {
 	display: flex;
-	align-items: center;	
-	height: 100px;
-	padding: 20px 40px;
+	align-items: center;
+	justify-content: space-between;
+	height: 80px;
+	padding: 0 20px;
 	border-bottom: 2px solid #e7e7e7;
+}
+
+.header-page .title {
+	font-size: 40px;
+}
+
+.header-page .top-menu {
+	display: flex;
+}
+
+.header-page .top-menu .item {
+	display: flex;
+  align-items: center;
+	margin-right: 20px;
+	transition: transform .2s;
+}
+
+.header-page .top-menu .item:hover {
+	transform: scale(1.5);
+}
+
+.header-page .top-menu .item-static {
+	display: flex;
+  align-items: center;
+}
+
+.header-page [class^="icon-"],
+.header-page [class*="icon-"] {
+  width: 24px;
+  height: 24px;
+}
+
+.icon-alarm-dark {
+  background-image: url('../../assets/icon-alarm-dark.svg');
+}
+
+.icon-message-dark {
+  background-image: url('../../assets/icon-message-dark.svg');
+}
+
+.icon-setting-dark {
+  background-image: url('../../assets/icon-settings-dark.svg');
+}
+
+.icon-user-dark {
+  background-image: url('../../assets/icon-user-dark.svg');
+}
+
+.header-page .inp-search{
+	border: 2px solid #ececec;
+	border-radius: 5px;
+	font-size: 16px;
+	height: 30px;
+	padding: 0 10px;
 }

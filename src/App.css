@@ -34,7 +34,7 @@ body, html {
 
 .content-page {
   flex: auto;
-  border: 2px solid orange;
+  background: #f4f4f4;
 }
 
 a {
@@ -379,56 +379,10 @@ h1, h2, h3, h4 {
   color: #ff5555;
 }
 
-[class^="icon-"],
-[class*="icon-"] {
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-  display: inline-block;
-  width: 18px;
-  height: 18px;
-}
-
-[class^="icon-"].space,
-[class*="icon-"].space {
-  margin-right: 10px;
-}
-/*
-.icon-create-website {
-  background-image: url('./assets/icon-create-website.svg');
-}
-
-.icon-close {
-  background-image: url('./assets/icon-close.svg');
-  width: 24px;
-  height: 24px;
-}
-
-.icon-edit {
-  background-image: url('./assets/icon-edit.svg');
-}
-
-.icon-trash {
-  background-image: url('./assets/icon-trash.svg');
-}
-
-.icon-key {
-  background-image: url('./assets/icon-key.svg');
-}
-
-.icon-logout {
-  background-image: url('./assets/icon-logout.svg');
-}
-
-.icon-save {
-  background-image: url('./assets/icon-save.svg');
-}*/
-
 .inline {
   display: flex;
   flex-direction: row;
 }
-
 
 ::-webkit-scrollbar {
   -webkit-appearance: none;
@@ -482,6 +436,32 @@ h1, h2, h3, h4 {
   margin-left: -10px;
 }
 
-h1 {
-  font-size: 40px;
+.module-box {
+  flex: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.module-box .header {
+  background: #ffffff;
+  display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 40px;
+	padding: 0 20px;
+	border-bottom: 2px solid #e7e7e7;
+}
+
+.module-box .content {
+  flex: auto;
+}
+
+[class^="icon-"],
+[class*="icon-"] {
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 24px;
+	height: 24px;
 }
