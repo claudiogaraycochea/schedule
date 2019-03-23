@@ -7,7 +7,7 @@ class SideMenu extends Component {
       <div className="side-menu">
         <div className="logo"></div>
         <div className="menu-list">
-          <div className="item"><i className="icon-group" /></div>
+          <div className="item selected"><i className="icon-group" /></div>
           <div className="item"><i className="icon-earn" /></div>
           <div className="item"><i className="icon-settings" /></div>
         </div>

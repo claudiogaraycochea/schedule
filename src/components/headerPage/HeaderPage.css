@@ -1,0 +1,7 @@
+.header-page {
+	display: flex;
+	align-items: center;	
+	height: 100px;
+	padding: 20px 40px;
+	border-bottom: 2px solid #e7e7e7;
+}

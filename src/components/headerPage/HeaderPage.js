@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import './HeaderPage.css';
 
 class HeaderPage extends Component {
   render() {
     return (
-      <div>
-        HeaderPage
+      <div className="header-page">
+        <h1>Schedule</h1>
       </div>
     );
   }
