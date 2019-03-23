@@ -11,4 +11,6 @@
 
 .schedule-content {
 	flex: auto;
+	display: flex;
+	flex-direction: column;
 }

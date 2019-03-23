@@ -7,7 +7,7 @@ class CalendarSelector extends Component {
       <div className="calendar-selector">
         <div className="module-box">
           <div className="header">
-            Calendar Header
+            MARCH
           </div>
           <div className="content">
             Calendar content
