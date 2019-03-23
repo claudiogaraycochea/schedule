@@ -1,10 +1,18 @@
 import React, { Component } from 'react';
+import './CalendarSelector.css';
 
 class CalendarSelector extends Component {
   render() {
     return (
-      <div>
-        CalendarSelector
+      <div className="calendar-selector">
+        <div className="module-box">
+          <div className="header">
+            Calendar Header
+          </div>
+          <div className="content">
+            Calendar content
+          </div>
+        </div>
       </div>
     );
   }

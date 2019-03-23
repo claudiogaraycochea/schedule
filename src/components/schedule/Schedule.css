@@ -1,14 +1,14 @@
 .schedule {
 	display: flex;
-	border: 1px solid green;
 }
 
 .schedule-side {
+	display: flex;
 	width: 300px;
-	border: 1px solid red;
+	flex-direction: column;
+	border-right: 1px solid #e7e7e7;
 }
 
 .schedule-content {
 	flex: auto;
-	border: 1px solid blue;
 }
