@@ -5,7 +5,18 @@ class HeaderPage extends Component {
   render() {
     return (
       <div className="header-page">
-        <h1>Schedule</h1>
+        <div className="title">Schedule</div>
+        <div className="top-menu">
+          <div className="item">
+            <i className="icon-user-dark" />
+          </div>
+          <div className="item">
+            <i className="icon-setting-dark" />
+          </div>
+          <div className="item-static">
+            <input type="text" defaultValue="" className="inp-search" placeholder="Search" />
+          </div>
+        </div>
       </div>
     );
   }

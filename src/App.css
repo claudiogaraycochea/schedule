@@ -34,7 +34,7 @@ body, html {
 
 .content-page {
   flex: auto;
-  border: 2px solid orange;
+  background: #f4f4f4;
 }
 
 a {
