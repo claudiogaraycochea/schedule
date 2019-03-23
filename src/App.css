@@ -95,6 +95,7 @@ a.btn {
 .btn.small {
   padding: 5px 10px;
   font-size: 12px;
+  height: 30px;
 }
 
 .btn.large-full {
@@ -439,7 +440,7 @@ h1, h2, h3, h4 {
   flex: auto;
   display: flex;
   flex-direction: column;
-  border-bottom: 2px solid #e7e7e7;
+  border-bottom: 1px solid #e7e7e7;
 }
 
 .module-box .header {
@@ -449,7 +450,7 @@ h1, h2, h3, h4 {
 	justify-content: space-between;
 	height: 40px;
 	padding: 0 20px;
-  border-bottom: 2px solid #e7e7e7;
+  border-bottom: 1px solid #e7e7e7;
   font-weight: bold;
 }
 
@@ -473,12 +474,11 @@ h1, h2, h3, h4 {
 }
 
 .table {
-  border: 1px solid red;
+  font-size: 14px;
 }
 
 .table .item {
   display: flex;
   align-items: center;
-  border-bottom: 1px solid blue;
   padding: 10px 20px;
 }
