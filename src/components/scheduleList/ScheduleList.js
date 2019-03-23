@@ -15,7 +15,10 @@ class ScheduleList extends Component {
               { scheduleList.map((item, key)=>{
                   return <div key={key} className="item">
                     <div className="col-2">{item.id}</div>
-                    <div className="col-6">{item.title}</div>
+                    <div className="col-4">{item.title}</div>
+                    <div className="col-2">{item.createdAt}</div>
+                    <div className="col-2">{item.updatedAt}</div>
+                    <div className="col-2"><button className="btn small">View</button></div>
                   </div>
                 })
               }              
