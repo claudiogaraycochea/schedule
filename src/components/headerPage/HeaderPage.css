@@ -37,6 +37,14 @@
   height: 24px;
 }
 
+.icon-alarm-dark {
+  background-image: url('../../assets/icon-alarm-dark.svg');
+}
+
+.icon-message-dark {
+  background-image: url('../../assets/icon-message-dark.svg');
+}
+
 .icon-setting-dark {
   background-image: url('../../assets/icon-settings-dark.svg');
 }

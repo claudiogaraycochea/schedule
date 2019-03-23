@@ -8,6 +8,12 @@ class HeaderPage extends Component {
         <div className="title">Schedule</div>
         <div className="top-menu">
           <div className="item">
+            <i className="icon-alarm-dark" />
+          </div>
+          <div className="item">
+            <i className="icon-message-dark" />
+          </div>
+          <div className="item">
             <i className="icon-user-dark" />
           </div>
           <div className="item">

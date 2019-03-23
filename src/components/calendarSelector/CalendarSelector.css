@@ -1,5 +1,4 @@
 .calendar-selector {
 	display: flex;
-	border: 1px solid red;
 	min-height: 200px;
 }

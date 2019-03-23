@@ -5,7 +5,14 @@ class CalendarSelector extends Component {
   render() {
     return (
       <div className="calendar-selector">
-        CalendarSelector
+        <div className="module-box">
+          <div className="header">
+            Calendar Header
+          </div>
+          <div className="content">
+            Calendar content
+          </div>
+        </div>
       </div>
     );
   }
