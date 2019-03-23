@@ -1,16 +1,22 @@
 .schedule-editor {
 	display: flex;
 	flex: auto;
-	height: 200px;
+	min-height: 280px;
+}
+
+.lapse-wrapper {
+	border-collapse: collapse;
 }
 
 .lapse-wrapper th {
-	border: 1px solid red;
-  border-spacing: 0;
+	padding: 20px;
+	background: #ffffff;
+	border-spacing: 0;
 }
 
 .lapse-wrapper td {
-	border: 1px solid blue;
+	border-left: 1px solid #e7e7e7;
 	padding: 20px;
 	border-spacing: 0;
+	border-collapse: collapse;
 }

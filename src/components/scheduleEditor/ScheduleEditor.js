@@ -67,7 +67,7 @@ class ScheduleEditor extends Component {
           <div className="header">
             EDITOR
           </div>
-          <div className="content">
+          <div className="content full">
             {this.buildLapse()}
           </div>
         </div>

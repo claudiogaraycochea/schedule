@@ -457,7 +457,12 @@ h1, h2, h3, h4 {
 .module-box .content {
   flex: auto;
   padding: 20px;
+  overflow-x: hidden;
   overflow-y: auto;
+}
+
+.module-box .content.full {
+  padding: 0;
 }
 
 .module-box .footer {
