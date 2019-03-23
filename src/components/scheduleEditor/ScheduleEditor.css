@@ -3,3 +3,14 @@
 	flex: auto;
 	height: 200px;
 }
+
+.lapse-wrapper th {
+	border: 1px solid red;
+  border-spacing: 0;
+}
+
+.lapse-wrapper td {
+	border: 1px solid blue;
+	padding: 20px;
+	border-spacing: 0;
+}

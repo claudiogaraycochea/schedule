@@ -230,7 +230,6 @@ h1, h2, h3, h4 {
   align-items: center;
 }
 
-
 .col-1 {
   -webkit-box-flex: 0;
   -ms-flex: 0 0 8.333333%;
@@ -458,6 +457,7 @@ h1, h2, h3, h4 {
 .module-box .content {
   flex: auto;
   padding: 20px;
+  overflow-y: auto;
 }
 
 .module-box .footer {
