@@ -4,8 +4,9 @@
 }
 
 .schedule-side {
+	display: flex;
 	width: 300px;
-	border: 1px solid red;
+	flex-direction: column;
 }
 
 .schedule-content {

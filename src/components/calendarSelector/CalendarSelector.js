@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import './CalendarSelector.css';
 
 class CalendarSelector extends Component {
   render() {
     return (
-      <div>
+      <div className="calendar-selector">
         CalendarSelector
       </div>
     );
