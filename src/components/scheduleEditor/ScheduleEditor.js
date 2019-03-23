@@ -7,10 +7,9 @@ class ScheduleEditor extends Component {
       <div className="schedule-editor">
         <div className="module-box">
           <div className="header">
-            ScheduleEditor HEader
+            EDITOR
           </div>
           <div className="content">
-            ScheduleEditor content
           </div>
         </div>
       </div>

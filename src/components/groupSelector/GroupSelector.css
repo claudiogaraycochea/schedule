@@ -1,4 +1,25 @@
 .group-selector {
 	flex: auto;
-    display: flex;
+	display: flex;
+}
+
+.group-item {
+	background: #222222;
+	color: #ffffff;
+	border-radius: 30px;
+	width: fit-content;
+	padding: 10px 20px;
+	margin-bottom: 10px;
+}
+
+.group-item.green {
+	background: #6ee5ab;
+}
+
+.group-item.violet {
+	background: #f74b98;
+}
+
+.group-item.blue {
+	background: #77cbf7;
 }
