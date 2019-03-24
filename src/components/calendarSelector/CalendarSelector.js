@@ -63,11 +63,6 @@ class CalendarSelector extends Component {
 				}
 
 				if(itemDraggable) {
-					const data = {
-						i,
-						j,
-						valueDay
-					}
 					children.push(
 						<td key={j}>
 							<div className="item item-draggable">
