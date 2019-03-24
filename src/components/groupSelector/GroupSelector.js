@@ -3,6 +3,11 @@ import './GroupSelector.css';
 import { groupList } from '../../global/Global';
 
 class GroupSelector extends Component {
+
+	onDragStart = (ev, groupId) => {
+		ev.dataTransfer.setData("groupId", groupId);
+	}
+
   render() {
     return (
       <div className="group-selector">
@@ -12,7 +17,10 @@ class GroupSelector extends Component {
           </div>
           <div className="content">
             { groupList.map((item, key)=>{
-                return <div key={key} className={`group-item ${item.color}`}>{item.name}</div>
+                return <div key={key} 
+                onDragStart = {(e) => this.onDragStart(e, item.id)}
+                draggable
+                className={`group-item ${item.color}`}>{item.name}</div>
               })
             }
           </div>
