@@ -3,13 +3,16 @@
 	display: flex;
 }
 
+.group-selector .group-item {
+	margin-bottom: 20px;
+}
+
 .group-item {
 	background: #222222;
 	color: #ffffff;
 	border-radius: 30px;
 	width: fit-content;
 	padding: 10px 20px;
-	margin-bottom: 10px;
 }
 
 .group-item.green {
