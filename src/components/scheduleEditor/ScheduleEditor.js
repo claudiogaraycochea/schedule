@@ -9,11 +9,15 @@ class ScheduleEditor extends Component {
       dateSelected: {},
       schedule:[ 
         {
-          date: '3/7/2019',
+          dateBegin: '3/7/2019',
+          dateEnd: '3/7/2019',
+          row: 1,
           groupId: 1,
         },
         {
-          date: '3/9/2019',
+          dateBegin: '3/9/2019',
+          dateEnd: '3/9/2019',
+          row: 2,
           groupId: 3,
         },
       ],
@@ -32,7 +36,7 @@ class ScheduleEditor extends Component {
   onDrop = (ev, data) => {
     const groupId = parseInt(ev.dataTransfer.getData('groupId'));
     //console.log('*******************',data,' / groupId: ',groupId);
-    const date = this.state.dateSelected.month+'/'+data.day+'/'+this.state.dateSelected.year;
+    const dateBegin = this.state.dateSelected.month+'/'+data.day+'/'+this.state.dateSelected.year;
     let schedule = this.state.schedule;
     //let scheduleItem = schedule.filter(item => item.date === date );
     /*if(scheduleItem.length>0){
@@ -47,7 +51,9 @@ class ScheduleEditor extends Component {
     }*/
 
     const newScheduleItem = {
-      date,
+      dateBegin: dateBegin,
+      dateEnd: dateBegin,
+      row: data.i,
       groupId: groupId,
     }
     schedule.push(newScheduleItem);
