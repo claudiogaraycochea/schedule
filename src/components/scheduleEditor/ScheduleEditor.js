@@ -57,11 +57,22 @@ class ScheduleEditor extends Component {
       groupId: groupId,
     }
     schedule.push(newScheduleItem);
-
-    console.log('************ schedule: ',schedule);
     this.setState({
       schedule,
     });
+  }
+
+  showGroup = (data) => {
+    const row = data.i;
+    const day = data.day;
+    const dateBegin = this.state.dateSelected.month+'/'+day+'/'+this.state.dateSelected.year;
+    const item = this.state.schedule.filter(item => ((item.dateBegin === dateBegin) && (item.row === row)));
+    if(item.length>0){
+      const groupId = item[0].groupId;
+      const element = (item[0].groupId) ? <div className="group-item">{groupId}</div> : 'ee';
+      return element;
+    }
+    return '';
   }
 
   buildLapseContent = (lapseDays) => {
@@ -82,10 +93,12 @@ class ScheduleEditor extends Component {
           children.push(
             <td key={j}
               onDragOver={(e)=>this.onDragOver(e)}
-              onDrop={(e)=>{this.onDrop(e, data)}}
-              >
+              onDrop={(e)=>{this.onDrop(e, data)}}>
               <div className="item item-draggable">
-                <div className="value-day">i:{i} j:{j} d {lapseDays[j].day}</div>
+                <div className="value-day">
+                  {/*i:{i} j:{j} d {lapseDays[j].day}*/}
+                  {this.showGroup(data)}
+                </div>
               </div>
             </td>
           )

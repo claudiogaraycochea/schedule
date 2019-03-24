@@ -16,7 +16,7 @@
 
 .lapse-wrapper td {
 	border-left: 1px solid #e7e7e7;
-	padding: 20px;
+	height: 80px;
 	border-spacing: 0;
 	border-collapse: collapse;
 }
