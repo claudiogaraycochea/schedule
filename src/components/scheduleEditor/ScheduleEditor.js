@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './ScheduleEditor.css';
-import { dataMonth } from '../../global/Global';
+import { dataMonth, groupList } from '../../global/Global';
 
 class ScheduleEditor extends Component {
   constructor(props) {
@@ -62,6 +62,14 @@ class ScheduleEditor extends Component {
     });
   }
 
+  getGroup = (groupId) => {
+    const item = groupList.filter(item => (item.id === groupId));
+    if(item.length>0){
+      return <div className={`group-item ${item[0].color}`}>{item[0].name}</div>
+    }
+    return 'eee';
+  }
+
   showGroup = (data) => {
     const row = data.i;
     const day = data.day;
@@ -69,7 +77,7 @@ class ScheduleEditor extends Component {
     const item = this.state.schedule.filter(item => ((item.dateBegin === dateBegin) && (item.row === row)));
     if(item.length>0){
       const groupId = item[0].groupId;
-      const element = (item[0].groupId) ? <div className="group-item">{groupId}</div> : 'ee';
+      const element = (item[0].groupId) ? this.getGroup(groupId) : 'ee';
       return element;
     }
     return '';
