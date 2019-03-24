@@ -20,3 +20,11 @@
 	border-spacing: 0;
 	border-collapse: collapse;
 }
+
+.lapse-wrapper .value-day {
+	position: relative;
+}
+
+.lapse-wrapper .group-item {
+	position: absolute;
+}
