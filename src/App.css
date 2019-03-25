@@ -59,6 +59,7 @@ a {
   max-width: 500px;
   border: 0;
   height: 40px;
+  border: 1px solid #e7e7e7;
 }
 
 textarea.inp {
@@ -214,6 +215,11 @@ h1, h2, h3, h4 {
   width: 100%;
   min-height: 1px;
   padding-right: 10px;
+}
+
+[class^="col-"]:last-child,
+[class*=" col-"]:last-child {
+  padding-right: 0;
 }
 
 .col {
@@ -477,6 +483,10 @@ h1, h2, h3, h4 {
   display: inline-block;
   width: 24px;
 	height: 24px;
+}
+
+.icon-close {
+  background-image: url('./assets/icon-close.svg');
 }
 
 .table {

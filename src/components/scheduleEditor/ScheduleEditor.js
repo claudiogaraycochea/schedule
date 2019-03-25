@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './ScheduleEditor.css';
 import { dataMonth, groupList } from '../../global/Global';
+import Modal from '../modal/Modal';
+import TaskCreate from '../taskCreate/TaskCreate';
 
 class ScheduleEditor extends Component {
   constructor(props) {
@@ -8,6 +10,7 @@ class ScheduleEditor extends Component {
     this.state = {
       dateSelected: {},
       schedule: [],
+      modalVisibility: true,
     }
   }
 
@@ -125,6 +128,10 @@ class ScheduleEditor extends Component {
 			</table>
 		)
   }
+
+  closeModal = () => {
+    this.setState({modalVisibility: false});
+  }
   
   render() {
     return (
@@ -137,6 +144,16 @@ class ScheduleEditor extends Component {
             {this.buildLapse()}
           </div>
         </div>
+
+        { (this.state.modalVisibility) ? 
+          <Modal 
+            {...this.props}
+            title='Create Website'
+            closeModal={this.closeModal}
+            >
+            <TaskCreate closeModal={this.closeModal} />
+          </Modal> : null } 
+
       </div>
     );
   }
