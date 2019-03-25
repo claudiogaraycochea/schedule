@@ -149,12 +149,10 @@ class ScheduleEditor extends Component {
   }
   
   saveSchedule = (scheduleItem) => {
-    console.log('ScheduleEdit: saveSchedule: scheduleItem', scheduleItem);
     this.props.scheduleInsert(scheduleItem);
   }
 
   render() {
-    console.log('this.state: ',this.state);
     return (
       <div className="schedule-editor">
         <div className="module-box">
