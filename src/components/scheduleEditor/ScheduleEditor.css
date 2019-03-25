@@ -1,8 +1,8 @@
 .schedule-editor {
 	display: flex;
 	flex: auto;
-	height: 280px;
-	min-height: 280px;
+	height: 240px;
+	min-height: 240px;
 }
 
 .lapse-wrapper {
