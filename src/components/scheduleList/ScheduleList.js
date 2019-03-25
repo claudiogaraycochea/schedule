@@ -6,14 +6,21 @@ class ScheduleList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      scheduleList: [],
+      schedule: [],
     }
   }
 
-  componentWillMount(){
+  componentDidMount(){
     this.setState({
-      scheduleList: this.props.schedule,
+      schedule: this.props.schedule,
     });
+  }
+
+  static getDerivedStateFromProps(nextProps, prevState){
+    if(nextProps.schedule!==prevState.schedule){
+      return { schedule: nextProps.schedule};
+    }
+    else return null;
   }
 
   render() {
@@ -25,7 +32,7 @@ class ScheduleList extends Component {
           </div>
           <div className="content">
             <div className="table">
-              { this.state.scheduleList.map((item, key)=>{
+              { this.state.schedule.map((item, key)=>{
                   const groupItem = groupList.reduce((result, group) => {
                       if(group.id === item.groupId){
                         result = group;
