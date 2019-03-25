@@ -159,9 +159,6 @@ class ScheduleEditor extends Component {
     return (
       <div className="schedule-editor">
         <div className="module-box">
-          <div className="header">
-            EDITOR
-          </div>
           <div className="content full">
             {this.buildLapse()}
           </div>
