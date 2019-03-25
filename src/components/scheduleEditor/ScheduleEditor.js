@@ -11,6 +11,7 @@ class ScheduleEditor extends Component {
       dateSelected: {},
       schedule: [],
       modalVisibility: false,
+      taskCounter: 1,
     }
   }
 
@@ -37,16 +38,18 @@ class ScheduleEditor extends Component {
     const groupId = parseInt(ev.dataTransfer.getData('groupId'));
     const dateBegin = this.state.dateSelected.month+'/'+data.day+'/'+this.state.dateSelected.year;
     let schedule = this.state.schedule;
-
     const newScheduleItem = {
       dateBegin: dateBegin,
       dateEnd: dateBegin,
       row: data.i,
+      task: this.state.taskCounter,
+      taskTitle: '',
       groupId: groupId,
     }
     schedule.push(newScheduleItem);
     this.setState({
       schedule,
+      taskCounter: (this.state.taskCounter+1),
     });
   }
 
@@ -77,7 +80,7 @@ class ScheduleEditor extends Component {
       const dateBegin = new Date(item[0].dateBegin);
       const dateEnd = new Date(item[0].dateEnd);
       const diffDays = parseInt((dateEnd - dateBegin) / (1000 * 60 * 60 * 24));
-      const groupItemWidth = diffDays * 149 + 149;
+      const groupItemWidth = diffDays * 150 + 150;
     return <div className={`group-item ${groupItem.color}`} style={{width: groupItemWidth}} onClick={(e)=>this.taskCreate(scheduleItem.task)}>[{scheduleItem.task}] {groupItem.name}</div>;
     }
     return '';
@@ -101,7 +104,7 @@ class ScheduleEditor extends Component {
               onDragOver={(e)=>this.onDragOver(e)}
               onDrop={(e)=>{this.onDrop(e, data)}}>
               <div className="item item-draggable">
-                <div className="value-day">
+                <div className="day-container">
                   {this.showTask(data)}
                 </div>
               </div>
