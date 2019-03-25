@@ -11,7 +11,7 @@ class ScheduleEditor extends Component {
       dateSelected: {},
       schedule: [],
       modalVisibility: false,
-      taskCounter: 1,
+      taskCounter: 3,
     }
   }
 
