@@ -163,7 +163,6 @@ class ScheduleEditor extends Component {
             {this.buildLapse()}
           </div>
         </div>
-
         { (this.state.modalVisibility) ? 
           <Modal 
             {...this.props}
@@ -171,8 +170,7 @@ class ScheduleEditor extends Component {
             closeModal={this.closeModal}
             >
             <TaskCreate closeModal={this.closeModal} {...this.state} saveSchedule={this.saveSchedule}/>
-          </Modal> : null } 
-
+          </Modal> : null }
       </div>
     );
   }
