@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './ScheduleEditor.css';
-import { dataMonth, groupList } from '../../global/Global';
+import { dataMonth, group } from '../../global/Global';
 import Modal from '../modal/Modal';
 import TaskCreate from '../taskCreate/TaskCreate';
 
@@ -54,7 +54,7 @@ class ScheduleEditor extends Component {
   }
 
   getGroup = (groupId) => {
-    const item = groupList.filter(item => (item.id === groupId));
+    const item = group.filter(item => (item.id === groupId));
     if(item.length>0){
       return item[0];
     }
