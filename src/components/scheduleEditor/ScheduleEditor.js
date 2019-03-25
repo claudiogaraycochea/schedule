@@ -7,26 +7,16 @@ class ScheduleEditor extends Component {
     super(props);
     this.state = {
       dateSelected: {},
-      schedule:[ 
-        {
-          dateBegin: '3/7/2019',
-          dateEnd: '3/7/2019',
-          row: 1,
-          groupId: 1,
-        },
-        {
-          dateBegin: '3/9/2019',
-          dateEnd: '3/9/2019',
-          row: 2,
-          groupId: 3,
-        },
-      ],
+      schedule: [],
     }
   }
 
   componentWillMount(){
     const dateSelected = dataMonth.getToday();
-    this.setState({dateSelected});
+    this.setState({
+      dateSelected,
+      schedule: this.props.schedule,
+    });
   }
 
 	onDragOver = (ev) => {
@@ -35,20 +25,8 @@ class ScheduleEditor extends Component {
   
   onDrop = (ev, data) => {
     const groupId = parseInt(ev.dataTransfer.getData('groupId'));
-    //console.log('*******************',data,' / groupId: ',groupId);
     const dateBegin = this.state.dateSelected.month+'/'+data.day+'/'+this.state.dateSelected.year;
     let schedule = this.state.schedule;
-    //let scheduleItem = schedule.filter(item => item.date === date );
-    /*if(scheduleItem.length>0){
-      scheduleItem[0].groupId = groupId;
-    }
-    else{
-      const newScheduleItem = {
-        date,
-        groupId: groupId,
-      }
-      schedule.push(newScheduleItem);
-    }*/
 
     const newScheduleItem = {
       dateBegin: dateBegin,
@@ -65,26 +43,29 @@ class ScheduleEditor extends Component {
   getGroup = (groupId) => {
     const item = groupList.filter(item => (item.id === groupId));
     if(item.length>0){
-      return <div className={`group-item ${item[0].color}`}>{item[0].name}</div>
+      return item[0];
     }
-    return 'eee';
+    return null;
   }
 
-  showGroup = (data) => {
+  showTask = (data) => {
     const row = data.i;
     const day = data.day;
     const dateBegin = this.state.dateSelected.month+'/'+day+'/'+this.state.dateSelected.year;
     const item = this.state.schedule.filter(item => ((item.dateBegin === dateBegin) && (item.row === row)));
     if(item.length>0){
-      const groupId = item[0].groupId;
-      const element = (item[0].groupId) ? this.getGroup(groupId) : 'ee';
-      return element;
+      const scheduleItem = item[0];
+      const groupItem = this.getGroup(scheduleItem.groupId);
+      const dateBegin = new Date(item[0].dateBegin);
+      const dateEnd = new Date(item[0].dateEnd);
+      const diffDays = parseInt((dateEnd - dateBegin) / (1000 * 60 * 60 * 24));
+      const groupItemWidth = diffDays * 149 + 149;
+    return <div className={`group-item ${groupItem.color}`} style={{width: groupItemWidth}}>[{scheduleItem.task}] {groupItem.name}</div>;
     }
     return '';
   }
 
   buildLapseContent = (lapseDays) => {
-    //const dateSelected = this.state.dateSelected;
     let table = [];
     let itemDraggable = true;
 
@@ -97,15 +78,13 @@ class ScheduleEditor extends Component {
             j,
             day: lapseDays[j].day,
           }
-          //console.log('lapseDays :',lapseDays[j],' > j:',{j},' > lapseDays[j]value',lapseDays[j].day);
           children.push(
             <td key={j}
               onDragOver={(e)=>this.onDragOver(e)}
               onDrop={(e)=>{this.onDrop(e, data)}}>
               <div className="item item-draggable">
                 <div className="value-day">
-                  {/*i:{i} j:{j} d {lapseDays[j].day}*/}
-                  {this.showGroup(data)}
+                  {this.showTask(data)}
                 </div>
               </div>
             </td>
@@ -148,7 +127,6 @@ class ScheduleEditor extends Component {
   }
   
   render() {
-    console.log('this.state: ',this.state);
     return (
       <div className="schedule-editor">
         <div className="module-box">
