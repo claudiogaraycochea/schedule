@@ -4,9 +4,9 @@ import { groupList } from '../../global/Global';
 
 class GroupSelector extends Component {
 
-	onDragStart = (ev, groupId) => {
-		ev.dataTransfer.setData("groupId", groupId);
-	}
+  onDragStart = (ev, groupId) => {
+    ev.dataTransfer.setData("groupId", groupId);
+  }
 
   render() {
     return (
