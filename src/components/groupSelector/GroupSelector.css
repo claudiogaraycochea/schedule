@@ -13,6 +13,9 @@
 	border-radius: 30px;
 	width: fit-content;
 	padding: 10px 20px;
+	cursor: pointer;
+	-webkit-transition: width 2s, height 4s; /* For Safari 3.1 to 6.0 */
+  transition: width 2s, height 4s;
 }
 
 .group-item.green {

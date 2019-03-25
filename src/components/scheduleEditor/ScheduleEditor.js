@@ -90,7 +90,7 @@ class ScheduleEditor extends Component {
     let table = [];
     let itemDraggable = true;
 
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < 6; i++) {
 			let children = []
 			for (let j = 0; j < 7; j++) {
         if(itemDraggable) {
@@ -170,7 +170,7 @@ class ScheduleEditor extends Component {
         { (this.state.modalVisibility) ? 
           <Modal 
             {...this.props}
-            title='Create Website'
+            title='EDIT TASK'
             closeModal={this.closeModal}
             >
             <TaskCreate closeModal={this.closeModal} {...this.state} saveSchedule={this.saveSchedule}/>
