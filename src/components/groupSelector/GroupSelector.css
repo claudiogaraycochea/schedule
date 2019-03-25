@@ -1,31 +1,31 @@
 .group-selector {
-	flex: auto;
-	display: flex;
+  flex: auto;
+  display: flex;
 }
 
 .group-selector .group-item {
-	margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .group-item {
-	background: #222222;
-	color: #ffffff;
-	border-radius: 30px;
-	width: fit-content;
-	padding: 10px 20px;
-	cursor: pointer;
-	-webkit-transition: width 2s, height 4s; /* For Safari 3.1 to 6.0 */
+  background: #222222;
+  color: #ffffff;
+  border-radius: 30px;
+  width: fit-content;
+  padding: 10px 20px;
+  cursor: pointer;
+  -webkit-transition: width 2s, height 4s; /* For Safari 3.1 to 6.0 */
   transition: width 2s, height 4s;
 }
 
 .group-item.green {
-	background: #6ee5ab;
+  background: #6ee5ab;
 }
 
 .group-item.violet {
-	background: #f74b98;
+  background: #f74b98;
 }
 
 .group-item.blue {
-	background: #77cbf7;
+  background: #77cbf7;
 }
