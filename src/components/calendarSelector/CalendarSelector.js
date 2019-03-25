@@ -6,28 +6,7 @@ class CalendarSelector extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      schedule: [{
-          date: '3/10/2019',
-          users: [1,2],
-        },
-        {
-          date: '3/15/2019',
-          users: [1],
-        },
-      ],
-      users: [{
-          id: 0,
-          firstName: 'Claudio',
-          lastName: 'Garaycochea',
-        }, 
-        {
-          id: 1,
-          firstName: 'Tomy',
-          lastName: 'Gary',
-        }
-      ],
       dateSelected: {},
-      usersSchedule: [],
     }
   }
 
