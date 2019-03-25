@@ -1,16 +1,16 @@
 .schedule {
-	display: flex;
+  display: flex;
 }
 
 .schedule-side {
-	display: flex;
-	width: 300px;
-	flex-direction: column;
-	border-right: 1px solid #e7e7e7;
+  display: flex;
+  width: 300px;
+  flex-direction: column;
+  border-right: 1px solid #e7e7e7;
 }
 
 .schedule-content {
-	flex: auto;
-	display: flex;
-	flex-direction: column;
+  flex: auto;
+  display: flex;
+  flex-direction: column;
 }
