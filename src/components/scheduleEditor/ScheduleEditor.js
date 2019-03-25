@@ -10,16 +10,23 @@ class ScheduleEditor extends Component {
     this.state = {
       dateSelected: {},
       schedule: [],
-      modalVisibility: true,
+      modalVisibility: false,
     }
   }
 
-  componentWillMount(){
+  componentDidMount(){
     const dateSelected = dataMonth.getToday();
     this.setState({
       dateSelected,
       schedule: this.props.schedule,
     });
+  }
+
+  static getDerivedStateFromProps(nextProps, prevState){
+    if(nextProps.schedule!==prevState.schedule){
+      return { schedule: nextProps.schedule};
+    }
+    else return null;
   }
 
 	onDragOver = (ev) => {
@@ -51,6 +58,14 @@ class ScheduleEditor extends Component {
     return null;
   }
 
+  taskCreate = (task) => {
+    console.log('Open Modal');
+    this.setState({
+      modalVisibility: true,
+      task: task,
+    })
+  }
+
   showTask = (data) => {
     const row = data.i;
     const day = data.day;
@@ -63,7 +78,7 @@ class ScheduleEditor extends Component {
       const dateEnd = new Date(item[0].dateEnd);
       const diffDays = parseInt((dateEnd - dateBegin) / (1000 * 60 * 60 * 24));
       const groupItemWidth = diffDays * 149 + 149;
-    return <div className={`group-item ${groupItem.color}`} style={{width: groupItemWidth}}>[{scheduleItem.task}] {groupItem.name}</div>;
+    return <div className={`group-item ${groupItem.color}`} style={{width: groupItemWidth}} onClick={(e)=>this.taskCreate(scheduleItem.task)}>[{scheduleItem.task}] {groupItem.name}</div>;
     }
     return '';
   }
@@ -133,7 +148,13 @@ class ScheduleEditor extends Component {
     this.setState({modalVisibility: false});
   }
   
+  saveSchedule = (scheduleItem) => {
+    console.log('ScheduleEdit: saveSchedule: scheduleItem', scheduleItem);
+    this.props.scheduleInsert(scheduleItem);
+  }
+
   render() {
+    console.log('this.state: ',this.state);
     return (
       <div className="schedule-editor">
         <div className="module-box">
@@ -151,7 +172,7 @@ class ScheduleEditor extends Component {
             title='Create Website'
             closeModal={this.closeModal}
             >
-            <TaskCreate closeModal={this.closeModal} />
+            <TaskCreate closeModal={this.closeModal} {...this.state} saveSchedule={this.saveSchedule}/>
           </Modal> : null } 
 
       </div>
