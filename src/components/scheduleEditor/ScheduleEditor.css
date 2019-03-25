@@ -1,6 +1,7 @@
 .schedule-editor {
 	display: flex;
 	flex: auto;
+	height: 280px;
 	min-height: 280px;
 }
 
