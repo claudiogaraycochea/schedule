@@ -30,8 +30,8 @@ class ScheduleEditor extends Component {
     else return null;
   }
 
-	onDragOver = (ev) => {
-		ev.preventDefault();
+  onDragOver = (ev) => {
+    ev.preventDefault();
   }
   
   onDrop = (ev, data) => {
@@ -91,8 +91,8 @@ class ScheduleEditor extends Component {
     let itemDraggable = true;
 
     for (let i = 0; i < 6; i++) {
-			let children = []
-			for (let j = 0; j < 7; j++) {
+      let children = []
+      for (let j = 0; j < 7; j++) {
         if(itemDraggable) {
           const data = {
             i,
@@ -112,9 +112,9 @@ class ScheduleEditor extends Component {
           )
         }
       }
-			table.push(<tr key={i}>{children}</tr>)
-		}
-		return table;
+      table.push(<tr key={i}>{children}</tr>)
+    }
+    return table;
   }
 
   buildLapse = () => {
@@ -128,7 +128,7 @@ class ScheduleEditor extends Component {
       {day:9},
     ];
     return(
-			<table className="lapse-wrapper">
+      <table className="lapse-wrapper">
         <thead>
           <tr>
             <th>DAY {lapseDays[0].day}</th>
@@ -140,11 +140,11 @@ class ScheduleEditor extends Component {
             <th>DAY {lapseDays[6].day}</th>
           </tr>
         </thead>
-				<tbody>
+        <tbody>
           {this.buildLapseContent(lapseDays)}
-				</tbody>
-			</table>
-		)
+        </tbody>
+      </table>
+    )
   }
 
   closeModal = () => {
