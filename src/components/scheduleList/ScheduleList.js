@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './ScheduleList.css';
-import { groupList } from '../../global/Global';
+import { group } from '../../global/Global';
 
 class ScheduleList extends Component {
   constructor(props) {
@@ -33,7 +33,7 @@ class ScheduleList extends Component {
           <div className="content">
             <div className="table">
               { this.state.schedule.map((item, key)=>{
-                  const groupItem = groupList.reduce((result, group) => {
+                  const groupItem = group.reduce((result, group) => {
                       if(group.id === item.groupId){
                         result = group;
                       }

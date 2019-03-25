@@ -1,4 +1,4 @@
-export const groupList = [
+export const group = [
   {
     id: 1,
     name: 'Investors',
@@ -16,28 +16,23 @@ export const groupList = [
   }
 ];
 
-export const scheduleList = [
+export const schedule = [
   {
-    id: 10,
+    dateBegin: '3/7/2019',
+    dateEnd: '3/8/2019',
+    row: 1,
+    task: '1',
+    taskTitle: 'Meeting',
     groupId: 1,
-    title: 'Meeting - Daily',
-    createdAt: '03/20/2019',
-    updatedAt: '03/21/2019',
   },
   {
-    id: 12,
-    groupId: 1,
-    title: 'Meeting - Poker Planning',
-    createdAt: '03/20/2019',
-    updatedAt: '03/21/2019',
+    dateBegin: '3/9/2019',
+    dateEnd: '3/9/2019',
+    row: 2,
+    task: '2',
+    taskTitle: 'Dev App',
+    groupId: 3,
   },
-  {
-    id: 13,
-    groupId: 2,
-    title: 'Meeting - Poker Planning',
-    createdAt: '03/20/2019',
-    updatedAt: '03/21/2019',
-  }
 ];
 
 export const dataMonth = {

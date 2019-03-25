@@ -4,29 +4,13 @@ import CalendarSelector from '../calendarSelector/CalendarSelector';
 import GroupSelector from '../groupSelector/GroupSelector';
 import ScheduleEditor from '../scheduleEditor/ScheduleEditor';
 import ScheduleList from '../scheduleList/ScheduleList';
+import { schedule } from '../../global/Global';
 
 class Schedule extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      schedule:[ 
-        {
-          dateBegin: '3/7/2019',
-          dateEnd: '3/8/2019',
-          row: 1,
-          task: '1',
-          taskTitle: 'Meeting',
-          groupId: 1,
-        },
-        {
-          dateBegin: '3/9/2019',
-          dateEnd: '3/9/2019',
-          row: 2,
-          task: '2',
-          taskTitle: 'Dev App',
-          groupId: 3,
-        },
-      ],
+      schedule: schedule,
     }
   }
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './GroupSelector.css';
-import { groupList } from '../../global/Global';
+import { group } from '../../global/Global';
 
 class GroupSelector extends Component {
 
@@ -16,7 +16,7 @@ class GroupSelector extends Component {
             GROUPS
           </div>
           <div className="content">
-            { groupList.map((item, key)=>{
+            { group.map((item, key)=>{
                 return <div key={key} 
                 onDragStart = {(e) => this.onDragStart(e, item.id)}
                 draggable
