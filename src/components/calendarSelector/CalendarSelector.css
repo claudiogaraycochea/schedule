@@ -1,6 +1,6 @@
 .calendar-selector {
-	display: flex;
-	min-height: 240px;
+  display: flex;
+  min-height: 240px;
 }
 
 .calendar-wrapper {
@@ -8,9 +8,9 @@
 }
 
 .calendar-wrapper .item, .calendar-wrapper th {
-	padding: 2px;
-	font-size: 10px;
-	text-align: center;
+  padding: 2px;
+  font-size: 10px;
+  text-align: center;
 }
 
 .calendar-wrapper td {
