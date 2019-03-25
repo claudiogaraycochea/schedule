@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import SideMenu from '../sideMenu/SideMenu';
-import HeaderPage from '../headerPage/HeaderPage';
+import Header from '../header/Header';
 import Schedule from '../schedule/Schedule';
 
 class Main extends Component {
@@ -11,7 +11,7 @@ class Main extends Component {
           <SideMenu />
         </div>
         <div className="content">
-          <HeaderPage />
+          <Header />
           <Schedule />
         </div>
       </div>
