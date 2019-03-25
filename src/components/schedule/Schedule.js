@@ -30,7 +30,17 @@ class Schedule extends Component {
     }
   }
 
+  scheduleInsert = (scheduleItem) => {
+    let schedule = JSON.parse(JSON.stringify(this.state.schedule));
+    const index = schedule.map(function(item){ return item.task;}).indexOf(scheduleItem.task);
+    schedule[index] = scheduleItem;
+    this.setState({
+      schedule,
+    })
+  }
+
   render() {
+    console.log('++++++++++++++++++++',this.state.schedule);
     return (
       <div className="content-page schedule">
         <div className="schedule-side">
@@ -38,7 +48,7 @@ class Schedule extends Component {
           <GroupSelector />
         </div>
         <div className="schedule-content">
-          <ScheduleEditor {...this.state}/>
+          <ScheduleEditor {...this.state} scheduleInsert={this.scheduleInsert}/>
           <ScheduleList {...this.state}/>
         </div>
       </div>
