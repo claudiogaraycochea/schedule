@@ -1,4 +1,5 @@
 .schedule-list {
 	display: flex;
 	flex: auto;
+	max-height: 200px;
 }

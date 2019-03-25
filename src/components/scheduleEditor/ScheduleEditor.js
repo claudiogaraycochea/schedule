@@ -11,6 +11,7 @@ class ScheduleEditor extends Component {
       dateSelected: {},
       schedule: [],
       modalVisibility: false,
+      taskCounter: 1,
     }
   }
 
@@ -37,16 +38,18 @@ class ScheduleEditor extends Component {
     const groupId = parseInt(ev.dataTransfer.getData('groupId'));
     const dateBegin = this.state.dateSelected.month+'/'+data.day+'/'+this.state.dateSelected.year;
     let schedule = this.state.schedule;
-
     const newScheduleItem = {
       dateBegin: dateBegin,
       dateEnd: dateBegin,
       row: data.i,
+      task: this.state.taskCounter,
+      taskTitle: '',
       groupId: groupId,
     }
     schedule.push(newScheduleItem);
     this.setState({
       schedule,
+      taskCounter: (this.state.taskCounter+1),
     });
   }
 
@@ -77,7 +80,7 @@ class ScheduleEditor extends Component {
       const dateBegin = new Date(item[0].dateBegin);
       const dateEnd = new Date(item[0].dateEnd);
       const diffDays = parseInt((dateEnd - dateBegin) / (1000 * 60 * 60 * 24));
-      const groupItemWidth = diffDays * 149 + 149;
+      const groupItemWidth = diffDays * 150 + 150;
     return <div className={`group-item ${groupItem.color}`} style={{width: groupItemWidth}} onClick={(e)=>this.taskCreate(scheduleItem.task)}>[{scheduleItem.task}] {groupItem.name}</div>;
     }
     return '';
@@ -87,7 +90,7 @@ class ScheduleEditor extends Component {
     let table = [];
     let itemDraggable = true;
 
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < 6; i++) {
 			let children = []
 			for (let j = 0; j < 7; j++) {
         if(itemDraggable) {
@@ -101,7 +104,7 @@ class ScheduleEditor extends Component {
               onDragOver={(e)=>this.onDragOver(e)}
               onDrop={(e)=>{this.onDrop(e, data)}}>
               <div className="item item-draggable">
-                <div className="value-day">
+                <div className="day-container">
                   {this.showTask(data)}
                 </div>
               </div>
@@ -149,12 +152,10 @@ class ScheduleEditor extends Component {
   }
   
   saveSchedule = (scheduleItem) => {
-    console.log('ScheduleEdit: saveSchedule: scheduleItem', scheduleItem);
     this.props.scheduleInsert(scheduleItem);
   }
 
   render() {
-    console.log('this.state: ',this.state);
     return (
       <div className="schedule-editor">
         <div className="module-box">
@@ -169,7 +170,7 @@ class ScheduleEditor extends Component {
         { (this.state.modalVisibility) ? 
           <Modal 
             {...this.props}
-            title='Create Website'
+            title='EDIT TASK'
             closeModal={this.closeModal}
             >
             <TaskCreate closeModal={this.closeModal} {...this.state} saveSchedule={this.saveSchedule}/>

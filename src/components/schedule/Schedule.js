@@ -40,7 +40,7 @@ class Schedule extends Component {
   }
 
   render() {
-    console.log('++++++++++++++++++++',this.state.schedule);
+    console.log('Schedule', this.state.schedule);
     return (
       <div className="content-page schedule">
         <div className="schedule-side">
