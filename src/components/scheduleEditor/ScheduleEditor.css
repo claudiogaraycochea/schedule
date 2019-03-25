@@ -1,30 +1,30 @@
 .schedule-editor {
-	display: flex;
-	flex: 1 1 260px;
-	min-height: 260px;
+  display: flex;
+  flex: 1 1 260px;
+  min-height: 260px;
 }
 
 .lapse-wrapper {
-	border-collapse: collapse;
+  border-collapse: collapse;
 }
 
 .lapse-wrapper th {
-	padding: 20px;
-	background: #ffffff;
-	border-spacing: 0;
+  padding: 20px;
+  background: #ffffff;
+  border-spacing: 0;
 }
 
 .lapse-wrapper td {
-	border-left: 1px solid #e7e7e7;
-	height: 60px;
-	border-spacing: 0;
-	border-collapse: collapse;
+  border-left: 1px solid #e7e7e7;
+  height: 60px;
+  border-spacing: 0;
+  border-collapse: collapse;
 }
 
 .lapse-wrapper .day-container {
-	position: relative;
+  position: relative;
 }
 
 .lapse-wrapper .group-item {
-	position: absolute;
+  position: absolute;
 }
